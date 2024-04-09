@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/noah/project/cppserver/src/client.cpp
+sys/socket.h
+-
+arpa/inet.h
+-
+cstring
+-
+cstdio
+-
+unistd.h
+-
+util.h
+/home/noah/project/cppserver/src/util.h
+
+/home/noah/project/cppserver/src/util.cpp
+util.h
+/home/noah/project/cppserver/src/util.h
+cstdio
+-
+cstdlib
+-
+
+/home/noah/project/cppserver/src/util.h
+
