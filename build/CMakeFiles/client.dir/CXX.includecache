@@ -6,7 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/noah/project/cppserver/src/client.cpp
+../src/util.h
+
+/home/noah/project/cppserver/client.cpp
 sys/socket.h
 -
 arpa/inet.h
@@ -18,15 +20,5 @@ cstdio
 unistd.h
 -
 util.h
-/home/noah/project/cppserver/src/util.h
-
-/home/noah/project/cppserver/src/util.cpp
-util.h
-/home/noah/project/cppserver/src/util.h
-cstdio
--
-cstdlib
--
-
-/home/noah/project/cppserver/src/util.h
+/home/noah/project/cppserver/util.h
 

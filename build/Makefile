@@ -136,6 +136,87 @@ client/fast:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
 .PHONY : client/fast
 
+client.o: client.cpp.o
+
+.PHONY : client.o
+
+# target to build an object file
+client.cpp.o:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client.cpp.o
+.PHONY : client.cpp.o
+
+client.i: client.cpp.i
+
+.PHONY : client.i
+
+# target to preprocess a source file
+client.cpp.i:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client.cpp.i
+.PHONY : client.cpp.i
+
+client.s: client.cpp.s
+
+.PHONY : client.s
+
+# target to generate assembly for a file
+client.cpp.s:
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client.cpp.s
+.PHONY : client.cpp.s
+
+server.o: server.cpp.o
+
+.PHONY : server.o
+
+# target to build an object file
+server.cpp.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server.cpp.o
+.PHONY : server.cpp.o
+
+server.i: server.cpp.i
+
+.PHONY : server.i
+
+# target to preprocess a source file
+server.cpp.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server.cpp.i
+.PHONY : server.cpp.i
+
+server.s: server.cpp.s
+
+.PHONY : server.s
+
+# target to generate assembly for a file
+server.cpp.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server.cpp.s
+.PHONY : server.cpp.s
+
+src/Channel.o: src/Channel.cpp.o
+
+.PHONY : src/Channel.o
+
+# target to build an object file
+src/Channel.cpp.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Channel.cpp.o
+.PHONY : src/Channel.cpp.o
+
+src/Channel.i: src/Channel.cpp.i
+
+.PHONY : src/Channel.i
+
+# target to preprocess a source file
+src/Channel.cpp.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Channel.cpp.i
+.PHONY : src/Channel.cpp.i
+
+src/Channel.s: src/Channel.cpp.s
+
+.PHONY : src/Channel.s
+
+# target to generate assembly for a file
+src/Channel.cpp.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Channel.cpp.s
+.PHONY : src/Channel.cpp.s
+
 src/Epoll.o: src/Epoll.cpp.o
 
 .PHONY : src/Epoll.o
@@ -162,6 +243,33 @@ src/Epoll.s: src/Epoll.cpp.s
 src/Epoll.cpp.s:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Epoll.cpp.s
 .PHONY : src/Epoll.cpp.s
+
+src/EventLoop.o: src/EventLoop.cpp.o
+
+.PHONY : src/EventLoop.o
+
+# target to build an object file
+src/EventLoop.cpp.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/EventLoop.cpp.o
+.PHONY : src/EventLoop.cpp.o
+
+src/EventLoop.i: src/EventLoop.cpp.i
+
+.PHONY : src/EventLoop.i
+
+# target to preprocess a source file
+src/EventLoop.cpp.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/EventLoop.cpp.i
+.PHONY : src/EventLoop.cpp.i
+
+src/EventLoop.s: src/EventLoop.cpp.s
+
+.PHONY : src/EventLoop.s
+
+# target to generate assembly for a file
+src/EventLoop.cpp.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/EventLoop.cpp.s
+.PHONY : src/EventLoop.cpp.s
 
 src/InetAddress.o: src/InetAddress.cpp.o
 
@@ -190,6 +298,33 @@ src/InetAddress.cpp.s:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/InetAddress.cpp.s
 .PHONY : src/InetAddress.cpp.s
 
+src/Server.o: src/Server.cpp.o
+
+.PHONY : src/Server.o
+
+# target to build an object file
+src/Server.cpp.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Server.cpp.o
+.PHONY : src/Server.cpp.o
+
+src/Server.i: src/Server.cpp.i
+
+.PHONY : src/Server.i
+
+# target to preprocess a source file
+src/Server.cpp.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Server.cpp.i
+.PHONY : src/Server.cpp.i
+
+src/Server.s: src/Server.cpp.s
+
+.PHONY : src/Server.s
+
+# target to generate assembly for a file
+src/Server.cpp.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Server.cpp.s
+.PHONY : src/Server.cpp.s
+
 src/Socket.o: src/Socket.cpp.o
 
 .PHONY : src/Socket.o
@@ -216,60 +351,6 @@ src/Socket.s: src/Socket.cpp.s
 src/Socket.cpp.s:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Socket.cpp.s
 .PHONY : src/Socket.cpp.s
-
-src/client.o: src/client.cpp.o
-
-.PHONY : src/client.o
-
-# target to build an object file
-src/client.cpp.o:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client.cpp.o
-.PHONY : src/client.cpp.o
-
-src/client.i: src/client.cpp.i
-
-.PHONY : src/client.i
-
-# target to preprocess a source file
-src/client.cpp.i:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client.cpp.i
-.PHONY : src/client.cpp.i
-
-src/client.s: src/client.cpp.s
-
-.PHONY : src/client.s
-
-# target to generate assembly for a file
-src/client.cpp.s:
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/client.cpp.s
-.PHONY : src/client.cpp.s
-
-src/server.o: src/server.cpp.o
-
-.PHONY : src/server.o
-
-# target to build an object file
-src/server.cpp.o:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.o
-.PHONY : src/server.cpp.o
-
-src/server.i: src/server.cpp.i
-
-.PHONY : src/server.i
-
-# target to preprocess a source file
-src/server.cpp.i:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.i
-.PHONY : src/server.cpp.i
-
-src/server.s: src/server.cpp.s
-
-.PHONY : src/server.s
-
-# target to generate assembly for a file
-src/server.cpp.s:
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.s
-.PHONY : src/server.cpp.s
 
 src/util.o: src/util.cpp.o
 
@@ -311,21 +392,30 @@ help:
 	@echo "... edit_cache"
 	@echo "... server"
 	@echo "... client"
+	@echo "... client.o"
+	@echo "... client.i"
+	@echo "... client.s"
+	@echo "... server.o"
+	@echo "... server.i"
+	@echo "... server.s"
+	@echo "... src/Channel.o"
+	@echo "... src/Channel.i"
+	@echo "... src/Channel.s"
 	@echo "... src/Epoll.o"
 	@echo "... src/Epoll.i"
 	@echo "... src/Epoll.s"
+	@echo "... src/EventLoop.o"
+	@echo "... src/EventLoop.i"
+	@echo "... src/EventLoop.s"
 	@echo "... src/InetAddress.o"
 	@echo "... src/InetAddress.i"
 	@echo "... src/InetAddress.s"
+	@echo "... src/Server.o"
+	@echo "... src/Server.i"
+	@echo "... src/Server.s"
 	@echo "... src/Socket.o"
 	@echo "... src/Socket.i"
 	@echo "... src/Socket.s"
-	@echo "... src/client.o"
-	@echo "... src/client.i"
-	@echo "... src/client.s"
-	@echo "... src/server.o"
-	@echo "... src/server.i"
-	@echo "... src/server.s"
 	@echo "... src/util.o"
 	@echo "... src/util.i"
 	@echo "... src/util.s"

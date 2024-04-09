@@ -57,18 +57,18 @@ include CMakeFiles/client.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/client.dir/flags.make
 
-CMakeFiles/client.dir/src/client.cpp.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/src/client.cpp.o: ../src/client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/src/client.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/src/client.cpp.o -c /home/noah/project/cppserver/src/client.cpp
+CMakeFiles/client.dir/client.cpp.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/client.cpp.o: ../client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/client.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client.dir/client.cpp.o -c /home/noah/project/cppserver/client.cpp
 
-CMakeFiles/client.dir/src/client.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/client.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/project/cppserver/src/client.cpp > CMakeFiles/client.dir/src/client.cpp.i
+CMakeFiles/client.dir/client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/client.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/project/cppserver/client.cpp > CMakeFiles/client.dir/client.cpp.i
 
-CMakeFiles/client.dir/src/client.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/client.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/project/cppserver/src/client.cpp -o CMakeFiles/client.dir/src/client.cpp.s
+CMakeFiles/client.dir/client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/client.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/project/cppserver/client.cpp -o CMakeFiles/client.dir/client.cpp.s
 
 CMakeFiles/client.dir/src/util.cpp.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/util.cpp.o: ../src/util.cpp
@@ -85,13 +85,13 @@ CMakeFiles/client.dir/src/util.cpp.s: cmake_force
 
 # Object files for target client
 client_OBJECTS = \
-"CMakeFiles/client.dir/src/client.cpp.o" \
+"CMakeFiles/client.dir/client.cpp.o" \
 "CMakeFiles/client.dir/src/util.cpp.o"
 
 # External object files for target client
 client_EXTERNAL_OBJECTS =
 
-client: CMakeFiles/client.dir/src/client.cpp.o
+client: CMakeFiles/client.dir/client.cpp.o
 client: CMakeFiles/client.dir/src/util.cpp.o
 client: CMakeFiles/client.dir/build.make
 client: CMakeFiles/client.dir/link.txt

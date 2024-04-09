@@ -1,6 +1,7 @@
 #include "Epoll.h"
 #include "util.h"
 #include <unistd.h>
+#include "Channel.h"
 #include <cstring>
 
 #define MAX_EVENTS 1024
@@ -28,13 +29,30 @@ void Epoll::add_fd(int fd, uint32_t op) {
     check_error(epoll_ctl(epoll_fd, EPOLL_CTL_ADD, fd, &ev) == -1, "epoll add fd failed");
 }
 
-std::vector<epoll_event> Epoll::poll(int timeout) {
-    std::vector<epoll_event> activeEvents;
+void Epoll::updateChannel(Channel* channel) {
+    int fd = channel->getfd();
+    epoll_event ev;
+    bzero(&ev, sizeof(ev));
+    ev.data.ptr = channel;
+    ev.events = channel->getEvents();
+    if (!channel->inEpoll()) {
+        check_error(epoll_ctl(epoll_fd, EPOLL_CTL_ADD, fd, &ev) == -1, "epoll add fd failed");
+        channel->setInEpoll();
+    }
+    else {
+        check_error(epoll_ctl(epoll_fd, EPOLL_CTL_MOD, fd, &ev) == -1, "epoll modify fd failed");
+    }
+}
+
+std::vector<Channel*> Epoll::poll(int timeout) {
+    std::vector<Channel*> activeEvents;
     int nfds = epoll_wait(epoll_fd, events, MAX_EVENTS, timeout);
     activeEvents.reserve(nfds);
     check_error(nfds == -1, "epoll wait failed");
     for (int i = 0; i < nfds; i++) {
-        activeEvents.push_back(events[i]);
+        Channel* ch = (Channel*)events[i].data.ptr;
+        ch->setRevents(events[i].events);
+        activeEvents.push_back(ch);
     }
     return activeEvents;
 }

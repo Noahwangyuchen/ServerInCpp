@@ -6,41 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/noah/project/cppserver/src/Epoll.h
-sys/epoll.h
--
-vector
--
+../src/EventLoop.h
 
-/home/noah/project/cppserver/src/InetAddress.h
-arpa/inet.h
--
+../src/Server.h
 
-/home/noah/project/cppserver/src/Socket.h
-
-/home/noah/project/cppserver/src/server.cpp
-cstdio
--
-arpa/inet.h
--
-cstring
--
-unistd.h
--
-errno.h
--
-fcntl.h
--
-memory
--
-Socket.h
-/home/noah/project/cppserver/src/Socket.h
-InetAddress.h
-/home/noah/project/cppserver/src/InetAddress.h
-Epoll.h
-/home/noah/project/cppserver/src/Epoll.h
-util.h
-/home/noah/project/cppserver/src/util.h
-
-/home/noah/project/cppserver/src/util.h
+/home/noah/project/cppserver/server.cpp
+Server.h
+/home/noah/project/cppserver/Server.h
+EventLoop.h
+/home/noah/project/cppserver/EventLoop.h
 
