@@ -190,6 +190,33 @@ server.cpp.s:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/server.cpp.s
 .PHONY : server.cpp.s
 
+src/Acceptor.o: src/Acceptor.cpp.o
+
+.PHONY : src/Acceptor.o
+
+# target to build an object file
+src/Acceptor.cpp.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Acceptor.cpp.o
+.PHONY : src/Acceptor.cpp.o
+
+src/Acceptor.i: src/Acceptor.cpp.i
+
+.PHONY : src/Acceptor.i
+
+# target to preprocess a source file
+src/Acceptor.cpp.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Acceptor.cpp.i
+.PHONY : src/Acceptor.cpp.i
+
+src/Acceptor.s: src/Acceptor.cpp.s
+
+.PHONY : src/Acceptor.s
+
+# target to generate assembly for a file
+src/Acceptor.cpp.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Acceptor.cpp.s
+.PHONY : src/Acceptor.cpp.s
+
 src/Channel.o: src/Channel.cpp.o
 
 .PHONY : src/Channel.o
@@ -216,6 +243,33 @@ src/Channel.s: src/Channel.cpp.s
 src/Channel.cpp.s:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Channel.cpp.s
 .PHONY : src/Channel.cpp.s
+
+src/Connection.o: src/Connection.cpp.o
+
+.PHONY : src/Connection.o
+
+# target to build an object file
+src/Connection.cpp.o:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Connection.cpp.o
+.PHONY : src/Connection.cpp.o
+
+src/Connection.i: src/Connection.cpp.i
+
+.PHONY : src/Connection.i
+
+# target to preprocess a source file
+src/Connection.cpp.i:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Connection.cpp.i
+.PHONY : src/Connection.cpp.i
+
+src/Connection.s: src/Connection.cpp.s
+
+.PHONY : src/Connection.s
+
+# target to generate assembly for a file
+src/Connection.cpp.s:
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Connection.cpp.s
+.PHONY : src/Connection.cpp.s
 
 src/Epoll.o: src/Epoll.cpp.o
 
@@ -398,9 +452,15 @@ help:
 	@echo "... server.o"
 	@echo "... server.i"
 	@echo "... server.s"
+	@echo "... src/Acceptor.o"
+	@echo "... src/Acceptor.i"
+	@echo "... src/Acceptor.s"
 	@echo "... src/Channel.o"
 	@echo "... src/Channel.i"
 	@echo "... src/Channel.s"
+	@echo "... src/Connection.o"
+	@echo "... src/Connection.i"
+	@echo "... src/Connection.s"
 	@echo "... src/Epoll.o"
 	@echo "... src/Epoll.i"
 	@echo "... src/Epoll.s"

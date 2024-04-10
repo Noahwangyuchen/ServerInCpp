@@ -5,10 +5,24 @@ CMakeFiles/server.dir/server.cpp.o
  ../src/EventLoop.h
  ../src/Server.h
  /home/noah/project/cppserver/server.cpp
+CMakeFiles/server.dir/src/Acceptor.cpp.o
+ /home/noah/project/cppserver/src/Acceptor.cpp
+ /home/noah/project/cppserver/src/Acceptor.h
+ /home/noah/project/cppserver/src/Channel.h
+ /home/noah/project/cppserver/src/EventLoop.h
+ /home/noah/project/cppserver/src/InetAddress.h
+ /home/noah/project/cppserver/src/Server.h
+ /home/noah/project/cppserver/src/Socket.h
 CMakeFiles/server.dir/src/Channel.cpp.o
  /home/noah/project/cppserver/src/Channel.cpp
  /home/noah/project/cppserver/src/Channel.h
  /home/noah/project/cppserver/src/EventLoop.h
+CMakeFiles/server.dir/src/Connection.cpp.o
+ /home/noah/project/cppserver/src/Channel.h
+ /home/noah/project/cppserver/src/Connection.cpp
+ /home/noah/project/cppserver/src/Connection.h
+ /home/noah/project/cppserver/src/EventLoop.h
+ /home/noah/project/cppserver/src/Socket.h
 CMakeFiles/server.dir/src/Epoll.cpp.o
  /home/noah/project/cppserver/src/Channel.h
  /home/noah/project/cppserver/src/Epoll.cpp
@@ -23,7 +37,9 @@ CMakeFiles/server.dir/src/InetAddress.cpp.o
  /home/noah/project/cppserver/src/InetAddress.cpp
  /home/noah/project/cppserver/src/InetAddress.h
 CMakeFiles/server.dir/src/Server.cpp.o
+ /home/noah/project/cppserver/src/Acceptor.h
  /home/noah/project/cppserver/src/Channel.h
+ /home/noah/project/cppserver/src/Connection.h
  /home/noah/project/cppserver/src/EventLoop.h
  /home/noah/project/cppserver/src/InetAddress.h
  /home/noah/project/cppserver/src/Server.cpp

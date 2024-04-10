@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/server.dir/server.cpp.o -c /home/noah/project/cppserver/server.cpp",
+  "file": "/home/noah/project/cppserver/server.cpp"
+},
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/server.dir/src/Acceptor.cpp.o -c /home/noah/project/cppserver/src/Acceptor.cpp",
+  "file": "/home/noah/project/cppserver/src/Acceptor.cpp"
+},
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/server.dir/src/Channel.cpp.o -c /home/noah/project/cppserver/src/Channel.cpp",
+  "file": "/home/noah/project/cppserver/src/Channel.cpp"
+},
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/server.dir/src/Connection.cpp.o -c /home/noah/project/cppserver/src/Connection.cpp",
+  "file": "/home/noah/project/cppserver/src/Connection.cpp"
+},
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/server.dir/src/Epoll.cpp.o -c /home/noah/project/cppserver/src/Epoll.cpp",
+  "file": "/home/noah/project/cppserver/src/Epoll.cpp"
+},
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/server.dir/src/EventLoop.cpp.o -c /home/noah/project/cppserver/src/EventLoop.cpp",
+  "file": "/home/noah/project/cppserver/src/EventLoop.cpp"
+},
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/server.dir/src/InetAddress.cpp.o -c /home/noah/project/cppserver/src/InetAddress.cpp",
+  "file": "/home/noah/project/cppserver/src/InetAddress.cpp"
+},
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/server.dir/src/Server.cpp.o -c /home/noah/project/cppserver/src/Server.cpp",
+  "file": "/home/noah/project/cppserver/src/Server.cpp"
+},
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/server.dir/src/Socket.cpp.o -c /home/noah/project/cppserver/src/Socket.cpp",
+  "file": "/home/noah/project/cppserver/src/Socket.cpp"
+},
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/server.dir/src/util.cpp.o -c /home/noah/project/cppserver/src/util.cpp",
+  "file": "/home/noah/project/cppserver/src/util.cpp"
+},
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/client.dir/client.cpp.o -c /home/noah/project/cppserver/client.cpp",
+  "file": "/home/noah/project/cppserver/client.cpp"
+},
+{
+  "directory": "/home/noah/project/cppserver/build",
+  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src  -g   -o CMakeFiles/client.dir/src/util.cpp.o -c /home/noah/project/cppserver/src/util.cpp",
+  "file": "/home/noah/project/cppserver/src/util.cpp"
+}
+]

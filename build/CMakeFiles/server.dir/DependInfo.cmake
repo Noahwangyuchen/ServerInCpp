@@ -5,7 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/noah/project/cppserver/server.cpp" "/home/noah/project/cppserver/build/CMakeFiles/server.dir/server.cpp.o"
+  "/home/noah/project/cppserver/src/Acceptor.cpp" "/home/noah/project/cppserver/build/CMakeFiles/server.dir/src/Acceptor.cpp.o"
   "/home/noah/project/cppserver/src/Channel.cpp" "/home/noah/project/cppserver/build/CMakeFiles/server.dir/src/Channel.cpp.o"
+  "/home/noah/project/cppserver/src/Connection.cpp" "/home/noah/project/cppserver/build/CMakeFiles/server.dir/src/Connection.cpp.o"
   "/home/noah/project/cppserver/src/Epoll.cpp" "/home/noah/project/cppserver/build/CMakeFiles/server.dir/src/Epoll.cpp.o"
   "/home/noah/project/cppserver/src/EventLoop.cpp" "/home/noah/project/cppserver/build/CMakeFiles/server.dir/src/EventLoop.cpp.o"
   "/home/noah/project/cppserver/src/InetAddress.cpp" "/home/noah/project/cppserver/build/CMakeFiles/server.dir/src/InetAddress.cpp.o"

@@ -5,6 +5,9 @@
 
 class Channel;
 
+/*
+    封装了epoll,用于注册Channel和生成epoll_wait的返回值
+*/
 class Epoll {
 
 private:
@@ -15,7 +18,6 @@ public:
     Epoll();
     ~Epoll();
 
-    void add_fd(int fd, uint32_t op);
     void updateChannel(Channel* channel);
     std::vector<Channel*> poll(int timeout = -1);
 

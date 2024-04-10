@@ -21,14 +21,6 @@ Epoll::~Epoll() {
     delete[] events;
 }
 
-void Epoll::add_fd(int fd, uint32_t op) {
-    epoll_event ev;
-    bzero(&ev, sizeof(ev));
-    ev.data.fd = fd;
-    ev.events = op;
-    check_error(epoll_ctl(epoll_fd, EPOLL_CTL_ADD, fd, &ev) == -1, "epoll add fd failed");
-}
-
 void Epoll::updateChannel(Channel* channel) {
     int fd = channel->getfd();
     epoll_event ev;

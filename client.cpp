@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include "util.h"
 
+#define BUFFER_SIZE 1024
+
 int main() {
 
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -34,15 +36,15 @@ int main() {
         // 接收数据
         ssize_t read_bytes = read(sockfd, buf, sizeof(buf));
         if (read_bytes > 0) {
-            printf("message from server: %s\n", buf);
+            printf("Message from server: %s\n", buf);
         }
         else if (!read_bytes) {
-            printf("server closed the connection.\n");
+            printf("Server closed the connection.\n");
             break;
         }
         else if (read_bytes == -1) {
             close(sockfd);
-            check_error(true, "sockt read error");
+            check_error(true, "socket read error");
         }
     }
 
