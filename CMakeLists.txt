@@ -3,10 +3,12 @@ project(cppserver)
 
 file(GLOB SOURCES "src/*.cpp")
 
-add_executable(client client.cpp src/util.cpp)
+add_executable(client client.cpp ${SOURCES})
 add_executable(server server.cpp ${SOURCES})
+add_executable(test test.cpp ${SOURCES})
 
 include_directories(src)
 
-target_link_libraries(client)
-target_link_libraries(server)
+target_link_libraries(client pthread)
+target_link_libraries(server pthread)
+target_link_libraries(test pthread)

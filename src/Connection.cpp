@@ -2,8 +2,10 @@
 #include "Socket.h"
 #include "EventLoop.h"
 #include "Channel.h"
+#include "util.h"
 #include <cstring>
 #include <unistd.h>
+#include <string>
 #include <functional>
 
 #define BUFFER_SIZE 1024
@@ -11,7 +13,9 @@
 Connection::Connection(EventLoop* _loop, Socket* _sock) : loop(_loop), sock(_sock) {
     channel = new Channel(loop, sock->getSockfd());
     channel->enableReading();
-    channel->setCallback(std::bind(&Connection::echo, this, sock->getSockfd()));
+    channel->useET();
+    channel->setReadCallback(std::bind(&Connection::echo, this, sock->getSockfd()));
+    channel->setUseThreadPool(true);
 }
 
 Connection::~Connection() {
@@ -21,12 +25,12 @@ Connection::~Connection() {
 
 void Connection::echo(int sockfd) {
     char buf[BUFFER_SIZE];
+    std::string message;
     while (true) {
         bzero(&buf, sizeof(buf));
         ssize_t read_bytes = read(sockfd, buf, sizeof(buf));
         if (read_bytes > 0) {
-            printf("Message from client fd %d: %s\n", sockfd, buf);
-            write(sockfd, buf, read_bytes); // 回发消息
+            message.append(buf, read_bytes);
         }
         else if (!read_bytes) {
             printf("Client fd %d disconnected!\n", sockfd);
@@ -38,7 +42,9 @@ void Connection::echo(int sockfd) {
             continue;
         }
         else if (read_bytes == -1 && ((errno == EAGAIN) || (errno == EWOULDBLOCK))) { // 读缓冲区为空,读完了
-            printf("Finish reading once, errno: %d\n", errno);
+            printf("Message from client fd %d: %s\n", sockfd, message.c_str());
+            check_error(write(sockfd, message.c_str(), message.size()) == -1, "write error"); // 回发消息
+            message.clear();
             break;
         }
     }

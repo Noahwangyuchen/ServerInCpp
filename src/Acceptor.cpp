@@ -10,10 +10,9 @@ Acceptor::Acceptor(EventLoop* _loop) : loop(_loop) {
     sock = new Socket();
     std::unique_ptr<InetAddress> addr(new InetAddress("127.0.0.1", 8888));
     sock->bind(addr.get());
-    sock->setnonblocking();
     sock->listen();
     channel = new Channel(loop, sock->getSockfd());
-    channel->setCallback(std::bind(&Acceptor::acceptConnection, this));
+    channel->setReadCallback(std::bind(&Acceptor::acceptConnection, this));
     channel->enableReading();
 }
 

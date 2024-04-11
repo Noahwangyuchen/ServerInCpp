@@ -12,6 +12,7 @@ class Server {
 private:
     EventLoop* loop;
     Acceptor* acceptor;
+    
     std::map<int, Connection*> connections;
 
 public:

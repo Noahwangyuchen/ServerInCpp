@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/server.dir/src/InetAddress.cpp.o"
   "CMakeFiles/server.dir/src/Server.cpp.o"
   "CMakeFiles/server.dir/src/Socket.cpp.o"
+  "CMakeFiles/server.dir/src/ThreadPool.cpp.o"
   "CMakeFiles/server.dir/src/util.cpp.o"
   "server"
   "server.pdb"

@@ -39,6 +39,10 @@ int Socket::accept(InetAddress* addr) {
     return connfd;
 }
 
+void Socket::connect(InetAddress* addr) {
+    check_error(::connect(sockfd, reinterpret_cast<sockaddr*>(&addr->addr), addr->addr_len) == -1, "connect failed");
+}
+
 int Socket::getSockfd() {
     return sockfd;
 }

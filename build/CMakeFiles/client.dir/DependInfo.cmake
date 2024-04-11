@@ -5,6 +5,15 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/noah/project/cppserver/client.cpp" "/home/noah/project/cppserver/build/CMakeFiles/client.dir/client.cpp.o"
+  "/home/noah/project/cppserver/src/Acceptor.cpp" "/home/noah/project/cppserver/build/CMakeFiles/client.dir/src/Acceptor.cpp.o"
+  "/home/noah/project/cppserver/src/Channel.cpp" "/home/noah/project/cppserver/build/CMakeFiles/client.dir/src/Channel.cpp.o"
+  "/home/noah/project/cppserver/src/Connection.cpp" "/home/noah/project/cppserver/build/CMakeFiles/client.dir/src/Connection.cpp.o"
+  "/home/noah/project/cppserver/src/Epoll.cpp" "/home/noah/project/cppserver/build/CMakeFiles/client.dir/src/Epoll.cpp.o"
+  "/home/noah/project/cppserver/src/EventLoop.cpp" "/home/noah/project/cppserver/build/CMakeFiles/client.dir/src/EventLoop.cpp.o"
+  "/home/noah/project/cppserver/src/InetAddress.cpp" "/home/noah/project/cppserver/build/CMakeFiles/client.dir/src/InetAddress.cpp.o"
+  "/home/noah/project/cppserver/src/Server.cpp" "/home/noah/project/cppserver/build/CMakeFiles/client.dir/src/Server.cpp.o"
+  "/home/noah/project/cppserver/src/Socket.cpp" "/home/noah/project/cppserver/build/CMakeFiles/client.dir/src/Socket.cpp.o"
+  "/home/noah/project/cppserver/src/ThreadPool.cpp" "/home/noah/project/cppserver/build/CMakeFiles/client.dir/src/ThreadPool.cpp.o"
   "/home/noah/project/cppserver/src/util.cpp" "/home/noah/project/cppserver/build/CMakeFiles/client.dir/src/util.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

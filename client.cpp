@@ -1,51 +1,52 @@
-#include <sys/socket.h>
-#include <arpa/inet.h>
+#include "Socket.h"
+#include "InetAddress.h"
 #include <cstring>
 #include <cstdio>
+#include <iostream>
 #include <unistd.h>
+#include <memory>
+#include <string>
 #include "util.h"
 
 #define BUFFER_SIZE 1024
 
 int main() {
 
-    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    check_error(sockfd == -1, "socket create faild");
-
-    struct sockaddr_in server_addr;
-    bzero(&server_addr, sizeof(server_addr));
-    server_addr.sin_family = AF_INET;
-    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
-    server_addr.sin_port = htons(8888);
-    check_error(connect(sockfd, reinterpret_cast<sockaddr*>(&server_addr), sizeof(server_addr)) == -1, "connect faild");
+    std::unique_ptr<Socket> sock(new Socket());
+    std::unique_ptr<InetAddress> addr(new InetAddress("127.0.0.1", 8888));
+    sock->connect(addr.get());
+    
+    std::string send_msg, recv_msg;
 
     while (true) {
-        char buf[BUFFER_SIZE];
-        bzero(buf, sizeof(buf));
-        scanf("%s", buf);           // 从键盘读入输入
+        std::cin >> send_msg;          // 从键盘读入输入
 
         // 发送数据
-        ssize_t write_bytes = write(sockfd, buf, strlen(buf));
+        ssize_t write_bytes = write(sock->getSockfd(), send_msg.c_str(), send_msg.size());
         if (write_bytes == -1) {
             printf("write failed, socket may be closed already.\n");
             break;
         }
-
-        bzero(buf, sizeof(buf));
         
+        char buf[BUFFER_SIZE];
         // 接收数据
-        ssize_t read_bytes = read(sockfd, buf, sizeof(buf));
-        if (read_bytes > 0) {
-            printf("Message from server: %s\n", buf);
+        while (true) {
+            bzero(buf, sizeof(buf));    
+            ssize_t read_bytes = read(sock->getSockfd(), buf, sizeof(buf));
+            if (read_bytes > 0) {
+                recv_msg.append(buf, read_bytes);
+            }
+            else if (!read_bytes) {
+                printf("Server closed the connection.\n");
+                break;
+            }
+            if (recv_msg.size() >= send_msg.size()) {
+                printf("Message from server: %s\n", recv_msg.c_str());
+                break;
+            }
         }
-        else if (!read_bytes) {
-            printf("Server closed the connection.\n");
-            break;
-        }
-        else if (read_bytes == -1) {
-            close(sockfd);
-            check_error(true, "socket read error");
-        }
+        recv_msg.clear();
     }
 
+    return 0;
 }

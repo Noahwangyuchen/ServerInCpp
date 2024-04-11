@@ -17,7 +17,9 @@ private:
     uint32_t events;        // 希望监听的事件
     uint32_t revents;       // 捕获到的事件
     bool in_epoll;
-    std::function<void()> callback;
+    bool useThreadPool;
+    std::function<void()> readCallback;
+    std::function<void()> writeCallback;
 
 public:
     Channel(EventLoop* _loop, int _fd);
@@ -30,7 +32,10 @@ public:
     uint32_t getEvents();
     uint32_t getRevents();
     bool inEpoll();
+    void useET();
+
     void setInEpoll();
     void setRevents(uint32_t _revents);
-    void setCallback(std::function<void()> _callback);
+    void setReadCallback(std::function<void()> _callback);
+    void setUseThreadPool(bool use = true);
 };
