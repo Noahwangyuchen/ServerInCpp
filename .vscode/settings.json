@@ -59,6 +59,7 @@
         "socket": "cpp",
         "future": "cpp",
         "iostream": "cpp",
-        "mutex": "cpp"
+        "mutex": "cpp",
+        "set": "cpp"
     }
 }

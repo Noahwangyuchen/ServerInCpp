@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/Acceptor.cpp.o"
+  "CMakeFiles/test.dir/src/Buffer.cpp.o"
   "CMakeFiles/test.dir/src/Channel.cpp.o"
   "CMakeFiles/test.dir/src/Connection.cpp.o"
   "CMakeFiles/test.dir/src/Epoll.cpp.o"

@@ -7,10 +7,8 @@ ThreadPool::ThreadPool(unsigned int size) : stop(false) {
                 std::function<void()> task;
                 {
                     std::unique_lock<std::mutex> lock(mtx);
-                    cv.wait(lock, [this]() {
-                        return stop || !tasks.empty();
-                    });
-                    if(stop && tasks.empty()) return;
+                    cv.wait(lock, [this]() { return stop || !tasks.empty(); });
+                    if (stop && tasks.empty()) return;
                     task = std::move(tasks.front());
                     tasks.pop();
                 }

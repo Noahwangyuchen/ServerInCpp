@@ -111,6 +111,45 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named run-cpplint
+
+# Build rule for target.
+run-cpplint: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run-cpplint
+.PHONY : run-cpplint
+
+# fast build rule for target.
+run-cpplint/fast:
+	$(MAKE) -f CMakeFiles/run-cpplint.dir/build.make CMakeFiles/run-cpplint.dir/build
+.PHONY : run-cpplint/fast
+
+#=============================================================================
+# Target rules for targets named clang-tidy
+
+# Build rule for target.
+clang-tidy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clang-tidy
+.PHONY : clang-tidy
+
+# fast build rule for target.
+clang-tidy/fast:
+	$(MAKE) -f CMakeFiles/clang-tidy.dir/build.make CMakeFiles/clang-tidy.dir/build
+.PHONY : clang-tidy/fast
+
+#=============================================================================
+# Target rules for targets named format
+
+# Build rule for target.
+format: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 format
+.PHONY : format
+
+# fast build rule for target.
+format/fast:
+	$(MAKE) -f CMakeFiles/format.dir/build.make CMakeFiles/format.dir/build
+.PHONY : format/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -235,6 +274,39 @@ src/Acceptor.cpp.s:
 	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Acceptor.cpp.s
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/Acceptor.cpp.s
 .PHONY : src/Acceptor.cpp.s
+
+src/Buffer.o: src/Buffer.cpp.o
+
+.PHONY : src/Buffer.o
+
+# target to build an object file
+src/Buffer.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Buffer.cpp.o
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Buffer.cpp.o
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/Buffer.cpp.o
+.PHONY : src/Buffer.cpp.o
+
+src/Buffer.i: src/Buffer.cpp.i
+
+.PHONY : src/Buffer.i
+
+# target to preprocess a source file
+src/Buffer.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Buffer.cpp.i
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Buffer.cpp.i
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/Buffer.cpp.i
+.PHONY : src/Buffer.cpp.i
+
+src/Buffer.s: src/Buffer.cpp.s
+
+.PHONY : src/Buffer.s
+
+# target to generate assembly for a file
+src/Buffer.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/Buffer.cpp.s
+	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/Buffer.cpp.s
+	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/Buffer.cpp.s
+.PHONY : src/Buffer.cpp.s
 
 src/Channel.o: src/Channel.cpp.o
 
@@ -567,6 +639,9 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... run-cpplint"
+	@echo "... clang-tidy"
+	@echo "... format"
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... server"
@@ -580,6 +655,9 @@ help:
 	@echo "... src/Acceptor.o"
 	@echo "... src/Acceptor.i"
 	@echo "... src/Acceptor.s"
+	@echo "... src/Buffer.o"
+	@echo "... src/Buffer.i"
+	@echo "... src/Buffer.s"
 	@echo "... src/Channel.o"
 	@echo "... src/Channel.i"
 	@echo "... src/Channel.s"

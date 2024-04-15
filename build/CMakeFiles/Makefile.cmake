@@ -45,6 +45,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/run-cpplint.dir/DependInfo.cmake"
+  "CMakeFiles/clang-tidy.dir/DependInfo.cmake"
+  "CMakeFiles/format.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
   "CMakeFiles/server.dir/DependInfo.cmake"
   "CMakeFiles/client.dir/DependInfo.cmake"

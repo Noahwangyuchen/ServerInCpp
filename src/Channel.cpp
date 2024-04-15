@@ -1,65 +1,70 @@
 #include "Channel.h"
-#include "EventLoop.h"
+
 #include <functional>
 
-Channel::Channel(EventLoop* _loop, int _fd) : loop(_loop), fd(_fd), events(0), 
-        revents(0), in_epoll(false), useThreadPool(false) {}
+#include "EventLoop.h"
 
-Channel::~Channel() {}
+const int Channel::READ_EVENT = 1;
+const int Channel::WRITE_EVENT = 2;
+const int Channel::ET = 4;
 
-void Channel::enableReading() {
-    events = EPOLLIN | EPOLLPRI;
+Channel::Channel(EventLoop* _loop, int _fd)
+    : loop(_loop),
+      fd(_fd),
+      events(0),
+      revents(0),
+      in_epoll(false) {}
+
+Channel::~Channel() {
+    loop->removeChannel(this);
+}
+
+void Channel::enableRead() {
+    events |= READ_EVENT;
+    loop->updateChannel(this);
+}
+
+void Channel::enableWrite() {
+    events |= WRITE_EVENT;
     loop->updateChannel(this);
 }
 
 void Channel::handleEvent() {
-    if (revents & (EPOLLIN | EPOLLPRI)) {
-        if (useThreadPool) {
-            loop->addToPool(readCallback);
-        }
-        else readCallback();
+    if (revents & READ_EVENT) {
+        readCallback();
     }
-    if (revents & EPOLLOUT) {
-        if (useThreadPool) {
-            loop->addToPool(writeCallback);
-        }
-        else writeCallback();
+    if (revents & WRITE_EVENT) {
+        writeCallback();
     }
 }
 
-int Channel::getfd() {
-    return fd;
-}
+int Channel::getfd() { return fd; }
 
 void Channel::useET() {
-    events |= EPOLLET;
+    events |= ET;
     loop->updateChannel(this);
 }
 
-uint32_t Channel::getEvents() {
-    return events;
-}
+uint32_t Channel::getEvents() { return events; }
 
-uint32_t Channel::getRevents() {
-    return revents;
-}
+uint32_t Channel::getRevents() { return revents; }
 
-bool Channel::inEpoll() {
-    return in_epoll;
-}
+bool Channel::inEpoll() { return in_epoll; }
 
-void Channel::setInEpoll() {
-    in_epoll = true;
-}
+void Channel::setInEpoll(bool _in_epoll) { in_epoll = _in_epoll; }
 
-void Channel::setRevents(uint32_t _revents) {
-    revents = _revents;
-}
+void Channel::setRevents(int _revents) { 
+    if (_revents & READ_EVENT) {
+        revents |= READ_EVENT;
+    }
+    if (_revents & WRITE_EVENT) {
+        revents |= WRITE_EVENT;
+    }
+    if (_revents & ET) {
+        revents |= ET;
+    }
+ }
 
-void Channel::setReadCallback(std::function<void()> _callback) {
+void Channel::setReadCallback(std::function<void()> const& _callback) {
     readCallback = _callback;
-}
-
-void Channel::setUseThreadPool(bool use) {
-    useThreadPool = use;
 }

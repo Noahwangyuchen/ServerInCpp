@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/noah/project/cppserver/src/Acceptor.cpp" "/home/noah/project/cppserver/build/CMakeFiles/test.dir/src/Acceptor.cpp.o"
+  "/home/noah/project/cppserver/src/Buffer.cpp" "/home/noah/project/cppserver/build/CMakeFiles/test.dir/src/Buffer.cpp.o"
   "/home/noah/project/cppserver/src/Channel.cpp" "/home/noah/project/cppserver/build/CMakeFiles/test.dir/src/Channel.cpp.o"
   "/home/noah/project/cppserver/src/Connection.cpp" "/home/noah/project/cppserver/build/CMakeFiles/test.dir/src/Connection.cpp.o"
   "/home/noah/project/cppserver/src/Epoll.cpp" "/home/noah/project/cppserver/build/CMakeFiles/test.dir/src/Epoll.cpp.o"
@@ -20,7 +21,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
+  "../src/include"
   )
 
 # Targets to which this target links.

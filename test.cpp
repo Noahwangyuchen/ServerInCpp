@@ -5,18 +5,19 @@
 #include "ThreadPool.h"
 #include "Socket.h"
 #include <cstring>
+#include <memory>
 #include <string>
 #include <iostream>
 
 void oneClient() {
     int msgs = 10, wait = 0;
     Socket *sock = new Socket();
-    InetAddress *addr = new InetAddress("127.0.0.1", 8888);
+    InetAddress *addr = new InetAddress("127.0.0.1", 8880);
     sock->connect(addr);
 
     int sockfd = sock->getSockfd();
 
-    sleep(wait);
+    //sleep(wait);
     int count = 0;
     while(count < msgs){
         std::string s("I'm client!");
@@ -29,7 +30,7 @@ void oneClient() {
         char buf[1024];    //这个buf大小无所谓
         std::string reads;
         while(true){
-            bzero(&buf, sizeof(buf));
+            memset(&buf, 0, sizeof(buf));
             ssize_t read_bytes = read(sockfd, buf, sizeof(buf));
             if(read_bytes > 0){
                 reads.append(buf, read_bytes);
@@ -50,11 +51,12 @@ void oneClient() {
 
 int main() {
     int threads = 10000;
-    ThreadPool *pool = new ThreadPool();
+    ThreadPool *pool = new ThreadPool(threads);
     std::function<void()> func = std::bind(oneClient);
     while(threads--) {
         pool->add(func);
     }
+
     delete pool;
     return 0;
 }

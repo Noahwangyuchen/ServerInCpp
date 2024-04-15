@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/noah/project/cppserver/src 
+CXX_INCLUDES = -I/home/noah/project/cppserver/src/include 
 
