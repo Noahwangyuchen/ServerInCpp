@@ -16,7 +16,7 @@ private:
     std::condition_variable cv;  // 条件变量，用于通知线程池中有任务需要处理
     std::vector<std::thread> threads;
     std::queue<std::function<void()>> tasks;
-    bool stop;
+    std::atomic<bool> stop;
 
 public:
     ThreadPool(unsigned int size = std::thread::hardware_concurrency());

@@ -4,35 +4,33 @@
 
 #include "include/Channel.h"
 #include "include/EventLoop.h"
-#include "include/InetAddress.h"
 #include "include/Server.h"
 #include "include/Socket.h"
 
-Acceptor::Acceptor(EventLoop* _loop) : loop(_loop) {
-    sock = new Socket();
-    std::unique_ptr<InetAddress> addr(new InetAddress("127.0.0.1", 8880));
-    sock->bind(addr.get());
-    sock->listen();
-    channel = new Channel(loop, sock->getSockfd());
-    channel->setReadCallback(std::bind(&Acceptor::acceptConnection, this));
-    channel->enableRead();
+Acceptor::Acceptor(EventLoop* _loop) {
+    m_sock = std::make_unique<Socket>();
+    m_sock->create();
+    m_sock->bind("127.0.0.1", 8888);
+    m_sock->listen();
+    m_channel = std::make_unique<Channel>(_loop, m_sock->getSockfd());
+    m_channel->setReadCallback(std::bind(&Acceptor::acceptConnection, this));
+    m_channel->enableRead();
 }
 
-Acceptor::~Acceptor() {
-    delete sock;
-    delete channel;
-}
+Acceptor::~Acceptor() {}
 
-void Acceptor::acceptConnection() {
-    std::unique_ptr<InetAddress> cln_addr(new InetAddress("127.0.0.1", 8880));
-    Socket* cln_sock = new Socket(sock->accept(cln_addr.get()));
-    cln_sock->setNonblocking();
-    if (newConnectionCallback) {
-        newConnectionCallback(cln_sock);
+RC Acceptor::acceptConnection() const {
+    int cln_fd = -1;
+    if (m_sock->accept(cln_fd) != RC::RC_SUCCESS) {
+        return RC::RC_ACCEPTOR_ERROR;
     }
+    if (m_newConnectionCallback) {
+        m_newConnectionCallback(cln_fd);
+    }
+    return RC::RC_SUCCESS;
 }
 
 void Acceptor::setNewConnectionCallback(
-    std::function<void(Socket*)> const& _callback) {
-    newConnectionCallback = _callback;
+    std::function<void(int)> const& _callback) {
+    m_newConnectionCallback = _callback;
 }

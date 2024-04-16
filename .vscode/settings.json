@@ -60,6 +60,7 @@
         "future": "cpp",
         "iostream": "cpp",
         "mutex": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "cerrno": "cpp"
     }
 }

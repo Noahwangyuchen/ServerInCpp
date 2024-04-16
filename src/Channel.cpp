@@ -9,15 +9,9 @@ const int Channel::WRITE_EVENT = 2;
 const int Channel::ET = 4;
 
 Channel::Channel(EventLoop* _loop, int _fd)
-    : loop(_loop),
-      fd(_fd),
-      events(0),
-      revents(0),
-      in_epoll(false) {}
+    : loop(_loop), fd(_fd), events(0), revents(0), in_epoll(false) {}
 
-Channel::~Channel() {
-    loop->removeChannel(this);
-}
+Channel::~Channel() { loop->removeChannel(this); }
 
 void Channel::enableRead() {
     events |= READ_EVENT;
@@ -45,15 +39,15 @@ void Channel::useET() {
     loop->updateChannel(this);
 }
 
-uint32_t Channel::getEvents() { return events; }
+short Channel::getEvents() { return events; }
 
-uint32_t Channel::getRevents() { return revents; }
+short Channel::getRevents() { return revents; }
 
 bool Channel::inEpoll() { return in_epoll; }
 
 void Channel::setInEpoll(bool _in_epoll) { in_epoll = _in_epoll; }
 
-void Channel::setRevents(int _revents) { 
+void Channel::setRevents(int _revents) {
     if (_revents & READ_EVENT) {
         revents |= READ_EVENT;
     }
@@ -63,7 +57,7 @@ void Channel::setRevents(int _revents) {
     if (_revents & ET) {
         revents |= ET;
     }
- }
+}
 
 void Channel::setReadCallback(std::function<void()> const& _callback) {
     readCallback = _callback;

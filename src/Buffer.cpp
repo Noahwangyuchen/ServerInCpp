@@ -1,21 +1,14 @@
 #include "include/Buffer.h"
+
 #include <iostream>
 
-void Buffer::append(const char* str, int size) {
-    buf.append(str, size);
-}
+void Buffer::append(const char* str, int size) { buf.append(str, size); }
 
-ssize_t Buffer::size() {
-    return buf.size();
-}
+ssize_t Buffer::size() { return buf.size(); }
 
-void Buffer::clear() {
-    buf.clear();
-}
+void Buffer::clear() { buf.clear(); }
 
-const char* Buffer::c_str() {
-    return buf.c_str();
-}
+const char* Buffer::c_str() { return buf.c_str(); }
 
 void Buffer::getline() {
     buf.clear();

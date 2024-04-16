@@ -9,64 +9,68 @@
 #include "Acceptor.h"
 #include "Connection.h"
 #include "EventLoop.h"
-#include "InetAddress.h"
 #include "Socket.h"
 #include "ThreadPool.h"
 #include "util.h"
 
-Server::Server(EventLoop* _loop) : m_mainReactor(_loop) {
-    m_acceptor = new Acceptor(m_mainReactor);
+Server::Server() {
+    m_mainReactor = std::make_unique<EventLoop>();
+    m_acceptor = std::make_unique<Acceptor>(m_mainReactor.get());
     m_acceptor->setNewConnectionCallback(
         std::bind(&Server::newConnection, this, std::placeholders::_1));
 
     int size = static_cast<int>(std::thread::hardware_concurrency());
-    m_pool = new ThreadPool(size);
-
+    m_pool = std::make_unique<ThreadPool>(size);
     m_subReactors.reserve(size);
     while (size--) {
-        m_subReactors.emplace_back(new EventLoop());
-        m_pool->add(std::move(
-            std::bind(&EventLoop::loop,
-                      m_subReactors.back())));  // 每个线程都启动一个EventLoop
+        m_subReactors.emplace_back(std::move(std::make_unique<EventLoop>()));
     }
 }
 
-Server::~Server() {
-    delete m_acceptor;
-    delete m_pool;
+void Server::start() {
+    for (auto &subReactor : m_subReactors) {
+        m_pool->add(std::move(
+            std::bind(&EventLoop::loop,
+                      subReactor.get())));  // 每个线程都启动一个EventLoop
+    }
+    m_mainReactor->loop();
 }
 
-void Server::newConnection(Socket* sock) {
-    int rand = sock->getSockfd() % m_subReactors.size();
-    Connection* conn = new Connection(m_subReactors[rand], sock);
+Server::~Server() {}
+
+RC Server::newConnection(int fd) {
+    int rand = fd % m_subReactors.size();
+    std::unique_ptr<Connection> conn =
+        std::make_unique<Connection>(m_subReactors[rand].get(), fd);
+    conn->getSocket()->setNonblocking();
     conn->setDeleteConnectionCallback(
         std::bind(&Server::deleteConnection, this, std::placeholders::_1));
     // conn->setOnConnectCallback(m_onConnectionCallback);
     conn->setOnMessageCallback(m_onMessageCallback);
-    m_connections[sock->getSockfd()] = conn;
+    m_connections[fd] = std::move(conn);
     if (m_newConnectionCallback) {
-        m_newConnectionCallback(conn);
+        m_newConnectionCallback(m_connections[fd].get());
     }
+    return RC::RC_SUCCESS;
 }
 
-void Server::deleteConnection(int sockfd) {
+RC Server::deleteConnection(int sockfd) {
     if (m_connections.find(sockfd) != m_connections.end()) {
-        Connection* conn = m_connections[sockfd];
-        delete conn;
         m_connections.erase(sockfd);
+    } else {
+        perror("deleteConnection error, sockfd not found in connections");
     }
+    return RC::RC_SUCCESS;
 }
 
-void Server::onConnect(std::function<void(Connection*)> const &func) { 
+void Server::onConnect(std::function<void(Connection *)> const &func) {
     m_onConnectionCallback = std::move(func);
 }
 
-void Server::onMessage(std::function<void(Connection*)> const &func) {
+void Server::onMessage(std::function<void(Connection *)> const &func) {
     m_onMessageCallback = std::move(func);
 }
 
-void Server::onNewConnection(std::function<void(Connection*)> const &func) {
+void Server::onNewConnection(std::function<void(Connection *)> const &func) {
     m_newConnectionCallback = std::move(func);
 }
-
-

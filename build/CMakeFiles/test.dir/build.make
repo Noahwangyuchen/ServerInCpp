@@ -148,22 +148,9 @@ CMakeFiles/test.dir/src/EventLoop.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/EventLoop.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/project/cppserver/src/EventLoop.cpp -o CMakeFiles/test.dir/src/EventLoop.cpp.s
 
-CMakeFiles/test.dir/src/InetAddress.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/src/InetAddress.cpp.o: ../src/InetAddress.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/src/InetAddress.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/InetAddress.cpp.o -c /home/noah/project/cppserver/src/InetAddress.cpp
-
-CMakeFiles/test.dir/src/InetAddress.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/src/InetAddress.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noah/project/cppserver/src/InetAddress.cpp > CMakeFiles/test.dir/src/InetAddress.cpp.i
-
-CMakeFiles/test.dir/src/InetAddress.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/src/InetAddress.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noah/project/cppserver/src/InetAddress.cpp -o CMakeFiles/test.dir/src/InetAddress.cpp.s
-
 CMakeFiles/test.dir/src/Server.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Server.cpp.o: ../src/Server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/src/Server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/src/Server.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Server.cpp.o -c /home/noah/project/cppserver/src/Server.cpp
 
 CMakeFiles/test.dir/src/Server.cpp.i: cmake_force
@@ -176,7 +163,7 @@ CMakeFiles/test.dir/src/Server.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/Socket.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/Socket.cpp.o: ../src/Socket.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/src/Socket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/src/Socket.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/Socket.cpp.o -c /home/noah/project/cppserver/src/Socket.cpp
 
 CMakeFiles/test.dir/src/Socket.cpp.i: cmake_force
@@ -189,7 +176,7 @@ CMakeFiles/test.dir/src/Socket.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/ThreadPool.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/ThreadPool.cpp.o: ../src/ThreadPool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/src/ThreadPool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/src/ThreadPool.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/ThreadPool.cpp.o -c /home/noah/project/cppserver/src/ThreadPool.cpp
 
 CMakeFiles/test.dir/src/ThreadPool.cpp.i: cmake_force
@@ -202,7 +189,7 @@ CMakeFiles/test.dir/src/ThreadPool.cpp.s: cmake_force
 
 CMakeFiles/test.dir/src/util.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/src/util.cpp.o: ../src/util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/test.dir/src/util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/src/util.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/src/util.cpp.o -c /home/noah/project/cppserver/src/util.cpp
 
 CMakeFiles/test.dir/src/util.cpp.i: cmake_force
@@ -222,7 +209,6 @@ test_OBJECTS = \
 "CMakeFiles/test.dir/src/Connection.cpp.o" \
 "CMakeFiles/test.dir/src/Epoll.cpp.o" \
 "CMakeFiles/test.dir/src/EventLoop.cpp.o" \
-"CMakeFiles/test.dir/src/InetAddress.cpp.o" \
 "CMakeFiles/test.dir/src/Server.cpp.o" \
 "CMakeFiles/test.dir/src/Socket.cpp.o" \
 "CMakeFiles/test.dir/src/ThreadPool.cpp.o" \
@@ -238,14 +224,13 @@ test: CMakeFiles/test.dir/src/Channel.cpp.o
 test: CMakeFiles/test.dir/src/Connection.cpp.o
 test: CMakeFiles/test.dir/src/Epoll.cpp.o
 test: CMakeFiles/test.dir/src/EventLoop.cpp.o
-test: CMakeFiles/test.dir/src/InetAddress.cpp.o
 test: CMakeFiles/test.dir/src/Server.cpp.o
 test: CMakeFiles/test.dir/src/Socket.cpp.o
 test: CMakeFiles/test.dir/src/ThreadPool.cpp.o
 test: CMakeFiles/test.dir/src/util.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

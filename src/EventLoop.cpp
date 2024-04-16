@@ -6,18 +6,24 @@
 #include "Epoll.h"
 #include "ThreadPool.h"
 
-EventLoop::EventLoop() : ep(nullptr), quit(false) { ep = new Epoll(); }
+EventLoop::EventLoop() : m_epoll(nullptr) {
+    m_epoll = std::make_unique<Epoll>();
+}
 
-EventLoop::~EventLoop() { delete ep; }
+EventLoop::~EventLoop() {}
 
 void EventLoop::loop() {
-    while (!quit) {
-        std::vector<Channel*> activeChannels = ep->poll();
-        for (auto& channel : activeChannels) {
+    while (true) {
+        for (auto& channel : m_epoll->poll()) {
             channel->handleEvent();
         }
     }
 }
 
-void EventLoop::updateChannel(Channel* channel) { ep->updateChannel(channel); }
-void EventLoop::removeChannel(Channel* channel) { ep->removeChannel(channel); }
+void EventLoop::updateChannel(Channel* channel) {
+    m_epoll->updateChannel(channel);
+}
+
+void EventLoop::removeChannel(Channel* channel) {
+    m_epoll->removeChannel(channel);
+}

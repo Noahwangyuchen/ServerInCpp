@@ -2,6 +2,7 @@
 
 #include <functional>
 #include <Macros.h>
+#include <memory>
 
 class Epoll;
 class Channel;
@@ -9,8 +10,7 @@ class Channel;
 class EventLoop {
 
 private:
-    Epoll* ep;
-    bool quit;
+    std::unique_ptr<Epoll> m_epoll;
 
 public:
     EventLoop();

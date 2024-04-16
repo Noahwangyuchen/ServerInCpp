@@ -440,39 +440,6 @@ src/EventLoop.cpp.s:
 	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/EventLoop.cpp.s
 .PHONY : src/EventLoop.cpp.s
 
-src/InetAddress.o: src/InetAddress.cpp.o
-
-.PHONY : src/InetAddress.o
-
-# target to build an object file
-src/InetAddress.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/InetAddress.cpp.o
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/InetAddress.cpp.o
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/InetAddress.cpp.o
-.PHONY : src/InetAddress.cpp.o
-
-src/InetAddress.i: src/InetAddress.cpp.i
-
-.PHONY : src/InetAddress.i
-
-# target to preprocess a source file
-src/InetAddress.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/InetAddress.cpp.i
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/InetAddress.cpp.i
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/InetAddress.cpp.i
-.PHONY : src/InetAddress.cpp.i
-
-src/InetAddress.s: src/InetAddress.cpp.s
-
-.PHONY : src/InetAddress.s
-
-# target to generate assembly for a file
-src/InetAddress.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/InetAddress.cpp.s
-	$(MAKE) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/InetAddress.cpp.s
-	$(MAKE) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/src/InetAddress.cpp.s
-.PHONY : src/InetAddress.cpp.s
-
 src/Server.o: src/Server.cpp.o
 
 .PHONY : src/Server.o
@@ -670,9 +637,6 @@ help:
 	@echo "... src/EventLoop.o"
 	@echo "... src/EventLoop.i"
 	@echo "... src/EventLoop.s"
-	@echo "... src/InetAddress.o"
-	@echo "... src/InetAddress.i"
-	@echo "... src/InetAddress.s"
 	@echo "... src/Server.o"
 	@echo "... src/Server.i"
 	@echo "... src/Server.s"

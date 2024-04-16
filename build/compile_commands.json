@@ -36,11 +36,6 @@
 },
 {
   "directory": "/home/noah/project/cppserver/build",
-  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src/include  -g   -o CMakeFiles/test.dir/src/InetAddress.cpp.o -c /home/noah/project/cppserver/src/InetAddress.cpp",
-  "file": "/home/noah/project/cppserver/src/InetAddress.cpp"
-},
-{
-  "directory": "/home/noah/project/cppserver/build",
   "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src/include  -g   -o CMakeFiles/test.dir/src/Server.cpp.o -c /home/noah/project/cppserver/src/Server.cpp",
   "file": "/home/noah/project/cppserver/src/Server.cpp"
 },
@@ -96,11 +91,6 @@
 },
 {
   "directory": "/home/noah/project/cppserver/build",
-  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src/include  -g   -o CMakeFiles/server.dir/src/InetAddress.cpp.o -c /home/noah/project/cppserver/src/InetAddress.cpp",
-  "file": "/home/noah/project/cppserver/src/InetAddress.cpp"
-},
-{
-  "directory": "/home/noah/project/cppserver/build",
   "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src/include  -g   -o CMakeFiles/server.dir/src/Server.cpp.o -c /home/noah/project/cppserver/src/Server.cpp",
   "file": "/home/noah/project/cppserver/src/Server.cpp"
 },
@@ -153,11 +143,6 @@
   "directory": "/home/noah/project/cppserver/build",
   "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src/include  -g   -o CMakeFiles/client.dir/src/EventLoop.cpp.o -c /home/noah/project/cppserver/src/EventLoop.cpp",
   "file": "/home/noah/project/cppserver/src/EventLoop.cpp"
-},
-{
-  "directory": "/home/noah/project/cppserver/build",
-  "command": "/usr/bin/c++   -I/home/noah/project/cppserver/src/include  -g   -o CMakeFiles/client.dir/src/InetAddress.cpp.o -c /home/noah/project/cppserver/src/InetAddress.cpp",
-  "file": "/home/noah/project/cppserver/src/InetAddress.cpp"
 },
 {
   "directory": "/home/noah/project/cppserver/build",

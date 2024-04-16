@@ -5,7 +5,6 @@ CMakeFiles/test.dir/src/Acceptor.cpp.o: ../src/Acceptor.cpp
 CMakeFiles/test.dir/src/Acceptor.cpp.o: ../src/include/Acceptor.h
 CMakeFiles/test.dir/src/Acceptor.cpp.o: ../src/include/Channel.h
 CMakeFiles/test.dir/src/Acceptor.cpp.o: ../src/include/EventLoop.h
-CMakeFiles/test.dir/src/Acceptor.cpp.o: ../src/include/InetAddress.h
 CMakeFiles/test.dir/src/Acceptor.cpp.o: ../src/include/Macros.h
 CMakeFiles/test.dir/src/Acceptor.cpp.o: ../src/include/Server.h
 CMakeFiles/test.dir/src/Acceptor.cpp.o: ../src/include/Socket.h
@@ -41,14 +40,9 @@ CMakeFiles/test.dir/src/EventLoop.cpp.o: ../src/include/Macros.h
 CMakeFiles/test.dir/src/EventLoop.cpp.o: ../src/include/ThreadPool.h
 CMakeFiles/test.dir/src/EventLoop.cpp.o: ../src/EventLoop.cpp
 
-CMakeFiles/test.dir/src/InetAddress.cpp.o: ../src/include/InetAddress.h
-CMakeFiles/test.dir/src/InetAddress.cpp.o: ../src/include/Macros.h
-CMakeFiles/test.dir/src/InetAddress.cpp.o: ../src/InetAddress.cpp
-
 CMakeFiles/test.dir/src/Server.cpp.o: ../src/include/Acceptor.h
 CMakeFiles/test.dir/src/Server.cpp.o: ../src/include/Connection.h
 CMakeFiles/test.dir/src/Server.cpp.o: ../src/include/EventLoop.h
-CMakeFiles/test.dir/src/Server.cpp.o: ../src/include/InetAddress.h
 CMakeFiles/test.dir/src/Server.cpp.o: ../src/include/Macros.h
 CMakeFiles/test.dir/src/Server.cpp.o: ../src/include/Server.h
 CMakeFiles/test.dir/src/Server.cpp.o: ../src/include/Socket.h
@@ -56,10 +50,8 @@ CMakeFiles/test.dir/src/Server.cpp.o: ../src/include/ThreadPool.h
 CMakeFiles/test.dir/src/Server.cpp.o: ../src/include/util.h
 CMakeFiles/test.dir/src/Server.cpp.o: ../src/Server.cpp
 
-CMakeFiles/test.dir/src/Socket.cpp.o: ../src/include/InetAddress.h
 CMakeFiles/test.dir/src/Socket.cpp.o: ../src/include/Macros.h
 CMakeFiles/test.dir/src/Socket.cpp.o: ../src/include/Socket.h
-CMakeFiles/test.dir/src/Socket.cpp.o: ../src/include/util.h
 CMakeFiles/test.dir/src/Socket.cpp.o: ../src/Socket.cpp
 
 CMakeFiles/test.dir/src/ThreadPool.cpp.o: ../src/include/Macros.h
@@ -69,10 +61,9 @@ CMakeFiles/test.dir/src/ThreadPool.cpp.o: ../src/ThreadPool.cpp
 CMakeFiles/test.dir/src/util.cpp.o: ../src/include/util.h
 CMakeFiles/test.dir/src/util.cpp.o: ../src/util.cpp
 
-CMakeFiles/test.dir/test.cpp.o: ../src/include/InetAddress.h
+CMakeFiles/test.dir/test.cpp.o: ../src/include/Connection.h
 CMakeFiles/test.dir/test.cpp.o: ../src/include/Macros.h
 CMakeFiles/test.dir/test.cpp.o: ../src/include/Socket.h
 CMakeFiles/test.dir/test.cpp.o: ../src/include/ThreadPool.h
-CMakeFiles/test.dir/test.cpp.o: ../src/include/util.h
 CMakeFiles/test.dir/test.cpp.o: ../test.cpp
 

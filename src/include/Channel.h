@@ -15,8 +15,8 @@ class Channel {
 private:
     EventLoop* loop;
     int fd;
-    int events;        // 希望监听的事件
-    int revents;       // 捕获到的事件
+    short events;        // 希望监听的事件
+    short revents;       // 捕获到的事件
     bool in_epoll;
     std::function<void()> readCallback;
     std::function<void()> writeCallback;
@@ -36,8 +36,8 @@ public:
     void handleEvent();
 
     int getfd();
-    uint32_t getEvents();
-    uint32_t getRevents();
+    short getEvents();
+    short getRevents();
     bool inEpoll();
     void useET();
 

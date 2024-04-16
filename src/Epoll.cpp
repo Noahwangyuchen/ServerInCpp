@@ -52,7 +52,7 @@ void Epoll::updateChannel(Channel* channel) {
 std::vector<Channel*> Epoll::poll(int timeout) {
     std::vector<Channel*> activeEvents;
     int nfds = epoll_wait(epoll_fd, events, MAX_EVENTS, timeout);
-    if (nfds == -1 && errno == EINTR) {   // 正常中断
+    if (nfds == -1 && errno == EINTR) {  // 正常中断
         return activeEvents;
     }
     check_error(nfds == -1, "epoll wait failed");
@@ -77,6 +77,7 @@ std::vector<Channel*> Epoll::poll(int timeout) {
 
 void Epoll::removeChannel(Channel* channel) {
     int fd = channel->getfd();
-    check_error(epoll_ctl(epoll_fd, EPOLL_CTL_DEL, fd, nullptr) == -1, "epoll remove failed");
+    check_error(epoll_ctl(epoll_fd, EPOLL_CTL_DEL, fd, nullptr) == -1,
+                "epoll remove failed");
     channel->setInEpoll(false);
 }

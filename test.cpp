@@ -1,52 +1,30 @@
-#include <unistd.h>
-#include <functional>
-#include "util.h"
-#include "InetAddress.h"
-#include "ThreadPool.h"
-#include "Socket.h"
-#include <cstring>
-#include <memory>
-#include <string>
 #include <iostream>
+#include "Connection.h"
+#include "Socket.h"
+#include "ThreadPool.h"
+#include <string>
 
 void oneClient() {
-    int msgs = 10, wait = 0;
-    Socket *sock = new Socket();
-    InetAddress *addr = new InetAddress("127.0.0.1", 8880);
-    sock->connect(addr);
+    int msgs = 100, wait = 0;
+    Socket* sock = new Socket();
+    sock->create();
+    sock->connect("127.0.0.1", 8888);
 
-    int sockfd = sock->getSockfd();
-
-    //sleep(wait);
-    int count = 0;
-    while(count < msgs){
-        std::string s("I'm client!");
-        ssize_t write_bytes = write(sockfd, s.c_str(), s.size());
-        if(write_bytes == -1){
-            printf("socket already disconnected, can't write any more!\n");
+    Connection* conn = new Connection(nullptr, sock->getSockfd());
+    while (msgs--) {
+        std::string s = "Hello, server!";
+        if (conn->getState() == Connection::State::Connected) {
+            conn->send(s);
+        }
+        if (conn->getState() == Connection::State::Closed) {
+            conn->close();
             break;
         }
-        int already_read = 0;
-        char buf[1024];    //这个buf大小无所谓
-        std::string reads;
-        while(true){
-            memset(&buf, 0, sizeof(buf));
-            ssize_t read_bytes = read(sockfd, buf, sizeof(buf));
-            if(read_bytes > 0){
-                reads.append(buf, read_bytes);
-                already_read += read_bytes;
-            } else if(read_bytes == 0){         //EOF
-                printf("server disconnected!\n");
-                exit(EXIT_SUCCESS);
-            }
-            if(already_read >= s.size()){
-                printf("count: %d, message from server: %s\n", count++, reads.c_str());
-                break;
-            } 
-        }
+        conn->read();
+        std::cout <<"cnt: " << msgs << "Message from server: " << conn->readBuffer() << std::endl;
     }
-    delete addr;
-    delete sock;
+
+    delete conn;
 }
 
 int main() {
@@ -56,7 +34,6 @@ int main() {
     while(threads--) {
         pool->add(func);
     }
-
     delete pool;
     return 0;
 }

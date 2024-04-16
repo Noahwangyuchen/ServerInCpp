@@ -5,7 +5,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/src/Connection.cpp.o"
   "CMakeFiles/test.dir/src/Epoll.cpp.o"
   "CMakeFiles/test.dir/src/EventLoop.cpp.o"
-  "CMakeFiles/test.dir/src/InetAddress.cpp.o"
   "CMakeFiles/test.dir/src/Server.cpp.o"
   "CMakeFiles/test.dir/src/Socket.cpp.o"
   "CMakeFiles/test.dir/src/ThreadPool.cpp.o"

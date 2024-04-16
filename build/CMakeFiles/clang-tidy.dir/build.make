@@ -55,7 +55,7 @@ include CMakeFiles/clang-tidy.dir/progress.make
 
 CMakeFiles/clang-tidy:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/noah/project/cppserver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running clang-tidy to check code style"
-	/usr/bin/clang-tidy -p /home/noah/project/cppserver/build /home/noah/project/cppserver/src/Acceptor.cpp /home/noah/project/cppserver/src/Buffer.cpp /home/noah/project/cppserver/src/Channel.cpp /home/noah/project/cppserver/src/Connection.cpp /home/noah/project/cppserver/src/Epoll.cpp /home/noah/project/cppserver/src/EventLoop.cpp /home/noah/project/cppserver/src/InetAddress.cpp /home/noah/project/cppserver/src/Server.cpp /home/noah/project/cppserver/src/Socket.cpp /home/noah/project/cppserver/src/ThreadPool.cpp /home/noah/project/cppserver/src/util.cpp -fix
+	/usr/bin/clang-tidy -p /home/noah/project/cppserver/build /home/noah/project/cppserver/src/Acceptor.cpp /home/noah/project/cppserver/src/Buffer.cpp /home/noah/project/cppserver/src/Channel.cpp /home/noah/project/cppserver/src/Connection.cpp /home/noah/project/cppserver/src/Epoll.cpp /home/noah/project/cppserver/src/EventLoop.cpp /home/noah/project/cppserver/src/Server.cpp /home/noah/project/cppserver/src/Socket.cpp /home/noah/project/cppserver/src/ThreadPool.cpp /home/noah/project/cppserver/src/util.cpp -fix
 
 clang-tidy: CMakeFiles/clang-tidy
 clang-tidy: CMakeFiles/clang-tidy.dir/build.make
