@@ -64,13 +64,13 @@ RC Server::deleteConnection(int sockfd) {
 }
 
 void Server::onConnect(std::function<void(Connection *)> const &func) {
-    m_onConnectionCallback = std::move(func);
+    m_onConnectionCallback = func;
 }
 
 void Server::onMessage(std::function<void(Connection *)> const &func) {
-    m_onMessageCallback = std::move(func);
+    m_onMessageCallback = func;
 }
 
 void Server::onNewConnection(std::function<void(Connection *)> const &func) {
-    m_newConnectionCallback = std::move(func);
+    m_newConnectionCallback = func;
 }

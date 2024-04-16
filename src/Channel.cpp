@@ -39,9 +39,9 @@ void Channel::useET() {
     loop->updateChannel(this);
 }
 
-short Channel::getEvents() { return events; }
+int16_t Channel::getEvents() { return events; }
 
-short Channel::getRevents() { return revents; }
+int16_t Channel::getRevents() { return revents; }
 
 bool Channel::inEpoll() { return in_epoll; }
 
